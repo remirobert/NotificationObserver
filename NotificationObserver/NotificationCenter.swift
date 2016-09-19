@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import UIKit
 
-typealias NotificationObserverBlock =  ((Any?) -> ())
+public typealias NotificationObserverBlock =  ((Any?) -> ())
 
-struct Notification<A> {
-    let name: String
+public struct Notification<A: Any> {
+    public let name: String
 }
 
-func post<A>(to note: Notification<A>, _ value: A?) {
+public func post<A>(to note: Notification<A>, _ value: A?) {
     let center = NotificationCenter.default
     let name = NSNotification.Name(note.name)
     guard let value = value else {
@@ -26,10 +25,10 @@ func post<A>(to note: Notification<A>, _ value: A?) {
     center.post(name: name, object: nil, userInfo: userInfo)
 }
 
-class NotificationObserver {
+public class NotificationObserver {
     let observer: NSObjectProtocol
     
-    init<A>(notification: Notification<A>, block aBlock: @escaping NotificationObserverBlock) {
+    public required init<A>(notification: Notification<A>, block aBlock: @escaping NotificationObserverBlock) {
         let center = NotificationCenter.default
         let name = NSNotification.Name(notification.name)
         

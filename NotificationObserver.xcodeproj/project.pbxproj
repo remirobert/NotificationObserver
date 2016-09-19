@@ -10,6 +10,7 @@
 		BB94B00D1D8FE067003B7F07 /* NotificationObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB94B0031D8FE067003B7F07 /* NotificationObserver.framework */; };
 		BB94B0121D8FE067003B7F07 /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB94B0111D8FE067003B7F07 /* NotificationObserverTests.swift */; };
 		BB94B0141D8FE067003B7F07 /* NotificationObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = BB94B0061D8FE067003B7F07 /* NotificationObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB94B01E1D8FE080003B7F07 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB94B01D1D8FE080003B7F07 /* NotificationCenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		BB94B00C1D8FE067003B7F07 /* NotificationObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB94B0111D8FE067003B7F07 /* NotificationObserverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
 		BB94B0131D8FE067003B7F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB94B01D1D8FE080003B7F07 /* NotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		BB94B0051D8FE067003B7F07 /* NotificationObserver */ = {
 			isa = PBXGroup;
 			children = (
+				BB94B01D1D8FE080003B7F07 /* NotificationCenter.swift */,
 				BB94B0061D8FE067003B7F07 /* NotificationObserver.h */,
 				BB94B0071D8FE067003B7F07 /* Info.plist */,
 			);
@@ -149,6 +152,7 @@
 					BB94B0021D8FE067003B7F07 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 44Q2J6374R;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					BB94B00B1D8FE067003B7F07 = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB94B01E1D8FE080003B7F07 /* NotificationCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		BB94B0181D8FE067003B7F07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 44Q2J6374R;
@@ -334,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = remi.robert.NotificationObserver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +348,7 @@
 		BB94B0191D8FE067003B7F07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 44Q2J6374R;
@@ -360,6 +368,7 @@
 		BB94B01B1D8FE067003B7F07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 44Q2J6374R;
 				INFOPLIST_FILE = NotificationObserverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +381,7 @@
 		BB94B01C1D8FE067003B7F07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 44Q2J6374R;
 				INFOPLIST_FILE = NotificationObserverTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
