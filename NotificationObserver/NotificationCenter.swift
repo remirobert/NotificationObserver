@@ -14,10 +14,6 @@ public protocol NotificationProtocol {
     var name: String {get}
 }
 
-//public struct Notification<A: Any> {
-//    public let name: String
-//}
-
 extension NotificationProtocol {
     public func post<A>(_ value: A?) {
         let center = NotificationCenter.default

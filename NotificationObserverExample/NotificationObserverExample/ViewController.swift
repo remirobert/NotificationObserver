@@ -35,9 +35,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         self.obs = NotificationObserver(notification: NotificationApp.UUID, block: { uuid in
+            guard let uuid = uuid else {
+                return
+            }
             print("suuid : \(uuid)")
         })
-        NotificationApp.UUID.post("ok")
+        NotificationApp.UUID.post(UUID().uuidString)
     }
 }
 
