@@ -12,6 +12,7 @@
 		BB94B0311D8FE108003B7F07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB94B02F1D8FE108003B7F07 /* Main.storyboard */; };
 		BB94B0331D8FE108003B7F07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB94B0321D8FE108003B7F07 /* Assets.xcassets */; };
 		BB94B0361D8FE108003B7F07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB94B0341D8FE108003B7F07 /* LaunchScreen.storyboard */; };
+		BB94B03F1D8FE8AB003B7F07 /* NotificationObserver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB94B03E1D8FE8AB003B7F07 /* NotificationObserver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BB94B0321D8FE108003B7F07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB94B0351D8FE108003B7F07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB94B0371D8FE108003B7F07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB94B03E1D8FE8AB003B7F07 /* NotificationObserver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationObserver.framework; path = "../../Library/Developer/Xcode/DerivedData/NotificationObserverExample-acmecgbczbtvqxgbariudgovupci/Build/Products/Debug-iphoneos/NotificationObserver.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB94B03F1D8FE8AB003B7F07 /* NotificationObserver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				BB94B02A1D8FE108003B7F07 /* NotificationObserverExample */,
 				BB94B0291D8FE108003B7F07 /* Products */,
+				BB94B03D1D8FE8AB003B7F07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				BB94B0371D8FE108003B7F07 /* Info.plist */,
 			);
 			path = NotificationObserverExample;
+			sourceTree = "<group>";
+		};
+		BB94B03D1D8FE8AB003B7F07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB94B03E1D8FE8AB003B7F07 /* NotificationObserver.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

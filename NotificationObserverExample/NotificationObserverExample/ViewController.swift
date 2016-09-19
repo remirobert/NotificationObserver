@@ -9,23 +9,35 @@
 import UIKit
 import NotificationObserver
 
+enum NotificationApp {
+    case Name(name: String)
+    case UUID
+}
+
+extension NotificationApp: NotificationProtocol {
+    var name: String {
+        get {
+            switch self {
+            case .Name:
+                return "name"
+            case .UUID:
+                return "uuid"
+            }
+        }
+    }
+}
+
 class ViewController: UIViewController {
 
-    private var obs: NotificationObserver!
+    private var obs: NotificationObserver<String>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let not = Notification<String>(name: "uuid")
-        
-//        self.obs = NotificationObserver(notification: notification, block: { uuid in
-//            guard let uuid = uuid else {
-//                return
-//            }
-//            print("uuid : \(uuid)")
-//        })
-        
-//        post(to: not, UUID().uuidString)
+
+        self.obs = NotificationObserver(notification: NotificationApp.UUID, block: { uuid in
+            print("suuid : \(uuid)")
+        })
+        NotificationApp.UUID.post("ok")
     }
 }
 

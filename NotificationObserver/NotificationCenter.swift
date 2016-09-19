@@ -10,25 +10,31 @@ import Foundation
 
 public typealias NotificationObserverBlock =  ((Any?) -> ())
 
-public struct Notification<A: Any> {
-    public let name: String
+public protocol NotificationProtocol {
+    var name: String {get}
 }
 
-public func post<A>(to note: Notification<A>, _ value: A?) {
-    let center = NotificationCenter.default
-    let name = NSNotification.Name(note.name)
-    guard let value = value else {
-        center.post(name: name, object: nil, userInfo: nil)
-        return
+//public struct Notification<A: Any> {
+//    public let name: String
+//}
+
+extension NotificationProtocol {
+    public func post<A>(_ value: A?) {
+        let center = NotificationCenter.default
+        let name = NSNotification.Name(self.name)
+        guard let value = value else {
+            center.post(name: name, object: nil, userInfo: nil)
+            return
+        }
+        let userInfo = ["value": value]
+        center.post(name: name, object: nil, userInfo: userInfo)
     }
-    let userInfo = ["value": value]
-    center.post(name: name, object: nil, userInfo: userInfo)
 }
 
-public class NotificationObserver {
+public class NotificationObserver<A> {
     let observer: NSObjectProtocol
     
-    public required init<A>(notification: Notification<A>, block aBlock: @escaping NotificationObserverBlock) {
+    public required init(notification: NotificationProtocol, block aBlock: @escaping NotificationObserverBlock) {
         let center = NotificationCenter.default
         let name = NSNotification.Name(notification.name)
         
